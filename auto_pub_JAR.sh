@@ -9,7 +9,7 @@ JARHOME=/home/XXXX
 ps -ef | grep ${JARNAME}  | grep -v grep | awk '{print $2}'  | xargs kill -9
 
 #Backup
-cd /home/${JARHOME}
+cd /${JARHOME}
 mv ${JARNAME} ${BAK_DIR}/${DATE}-${JARNAME}
 find ${BACKUP_DIR} -type f -mtime +${RMDATE} -exec rm -rf {} \;
 echo "Backup finished!"
