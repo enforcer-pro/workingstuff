@@ -1,0 +1,17 @@
+/home/nginx/logs/*.log {
+daily
+rotate 15
+missingok
+notifempty
+sharedscripts
+dateext
+postrotate
+ if [ -f /home/nginx/logs/nginx.pid ]; then
+kill -USR1 `cat /home/nginx/logs/nginx.pid`
+fi
+endscript
+}
+
+
+// adding this to crontab
+// 0 0 * * * root ( /usr/sbin/logrotate -f /etc/logrotate.d/nginx)
