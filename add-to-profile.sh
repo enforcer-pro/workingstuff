@@ -1,3 +1,7 @@
+#/var/log/history 日志的存放位置，该目录下以每个用户为名创建一个文件夹，每次用户退出后都会产生以用户名、登录IP、时间的日志文件，以及用户本次的所有操作。
+#	vim /etc/profile
+# source /etc/profile
+
 history
  USER=`whoami`
  USER_IP=`who -u am i 2>/dev/null| awk '{print $NF}'|sed -e 's/[()]//g'`
