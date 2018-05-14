@@ -11,6 +11,8 @@ public class HibernateTx {
             sessionFactory=HibernateUtil.getSessionFactory();
             session=HibernateUtil.getSessionObject();
             trans=session.beginTransaction();
+            
+            trans.commit();
 
         }catch (Exception e){
             e.fillInStackTrace();
